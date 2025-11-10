@@ -10,8 +10,7 @@ void merge(int urutan[], int kiri, int tengah, int kanan){
     for(int i = 0; i < n1; i++){
         arrKiri[i] = urutan[kiri + i];
     }
-
-     for(int j = 0; j < n2; j++){
+    for(int j = 0; j < n2; j++){
         arrKanan[j] = urutan[tengah + 1 + j];
     }
 
@@ -20,7 +19,7 @@ void merge(int urutan[], int kiri, int tengah, int kanan){
     int k = kiri;
     while(i < n1 && j < n2){
         if(arrKiri[i] <= arrKanan[j]){
-            urutan[k] = arrKiri[i];
+            urutan[k] = arrKiri[i]; 
             i++;
         }
         else{
@@ -40,11 +39,6 @@ void merge(int urutan[], int kiri, int tengah, int kanan){
         k++;
     }
 }
-void tampilan(int urutan[], int panjang){
-    for(int i = 0; i < panjang; i++){
-        cout << urutan[i] << " ";
-    }
-}
 void mergeSort(int urutan[], int kiri, int kanan){
     if(kiri < kanan){
         int tengah = kiri + (kanan - kiri) / 2;
@@ -54,8 +48,15 @@ void mergeSort(int urutan[], int kiri, int kanan){
     }
 }
 int main(){
-    int urutan[5] = {1, 3, 4, 5, 2};
-    mergeSort(urutan, 0, 4);
-    tampilan(urutan, 5);
+    int panjang;
+    cout << "Masukkan panjang elemen: "; cin >> panjang;
+    int urutan[panjang];
+    for(int i = 0; i < panjang; i++){
+        cin >> urutan[i];
+    }
+    mergeSort(urutan, 0, panjang - 1);
+    for(int i = 0; i < panjang; i++){
+        cout << urutan[i] << " ";
+    }
     return 0;
 }
