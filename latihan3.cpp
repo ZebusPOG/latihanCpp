@@ -1,3 +1,4 @@
+//Program merge sort
 #include <iostream>
 using namespace std;
 void merge(int urutan[], int kiri, int tengah, int kanan){

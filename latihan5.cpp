@@ -1,3 +1,4 @@
+//Program Selection Sort    
 #include <iostream>
 using namespace std;
 void selectionSorting(int urutan[], int panjang){
